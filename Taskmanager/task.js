@@ -18,5 +18,13 @@ addTask(task) {
             console.log(`Task "${task}" already exists!`);
         }
         return true; // continue loop
+
+        
+    }
+    //Mark a task as completed
+    completeTask(task){
+        if (this.taskStatus.has(task)){
+            this.taskStatus.set(task, "Completed");
+        }
 }
 }
