@@ -56,3 +56,11 @@ addTask(task) {
 }
 // Create task manager instance
 const manager = new TaskManager();
+// Stimulate user input
+const taskList = ["Learn Javascript", "Build a project", "Learn Javascript", "Write documentation", "STOP"];
+for (const task of taskList){
+    if (!manager.addTask(task)) break; // stop loop on STOP
+}
+manager.completeTask("Learn Javascript");
+manager.removeTask("Write documentation");
+manager.showTasks();
