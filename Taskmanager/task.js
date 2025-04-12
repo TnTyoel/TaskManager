@@ -53,4 +53,6 @@ addTask(task) {
             console.log(`- ${task} [${this.taskStatus.get(task)}]`);
         }
 }
-}  
+}
+// Create task manager instance
+const manager = new TaskManager();
