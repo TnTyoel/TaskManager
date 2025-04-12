@@ -25,6 +25,32 @@ addTask(task) {
     completeTask(task){
         if (this.taskStatus.has(task)){
             this.taskStatus.set(task, "Completed");
+
+        console.log(`Task "${task}" marked as completed.`);
+        } else {
+            console.log(`Task "${task}" not found.`);
+        }
+    }
+    //Remove a task
+    removeTask(task){
+        if (this.tasks.has(task)){
+            this.tasks.delete(task);
+            this.taskStatus.delete(task);
+            console.log(`Task "${task}" removed.`);
+        }else{
+            console.log(`Task "${task}" does not exist.`);
+        }
+    }
+
+    // Display all tasks
+    showTasks(){
+        if (this.tasks.size === 0){
+            console.log("No tasks available.");
+            return;
+        }
+        console.log("\nTasks:");
+        for (const task of this.tasks){
+            console.log(`- ${task} [${this.taskStatus.get(task)}]`);
         }
 }
-}
+}  
